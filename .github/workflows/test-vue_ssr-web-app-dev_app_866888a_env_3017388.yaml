@@ -431,7 +431,7 @@ jobs:
                 fi
 
                 create_app=$(
-                  aws amplify create-app         --name ${{ env.APPLICATION_NAME }}         --platform WEB_COMPUTE         --repository $formattedRepoUrl         --environment-variables "Branch=$BRANCH_NAME,Commit=$COMMIT_ID${{ env.AMPLIFY_ENV_VARS }}"         $token_flag $access_token         --region ${{ env.region }}         --iam-service-role-arn ${{ env.roleARN }}         --build-spec "$build_spec"       )
+                  aws amplify create-app         --name ${{ env.APPLICATION_NAME }}         --platform WEB         --repository $formattedRepoUrl         --environment-variables "Branch=$BRANCH_NAME,Commit=$COMMIT_ID${{ env.AMPLIFY_ENV_VARS }}"         $token_flag $access_token         --region ${{ env.region }}         --iam-service-role-arn ${{ env.roleARN }}         --build-spec "$build_spec"       )
                 app_id=$(echo $create_app | jq -r '.app.appId')
               fi
               
