@@ -386,6 +386,7 @@ jobs:
               build_spec='{
                 "version": 1,
                 "frontend": {
+                  "framework": "vue",
                   "phases": {
                     "preBuild": {
                       "commands": [
